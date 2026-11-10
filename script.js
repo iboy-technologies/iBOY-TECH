@@ -29,6 +29,29 @@ if (reduceMotion || !("IntersectionObserver" in window)) {
   revealItems.forEach((item) => revealObserver.observe(item));
 }
 
+const parallaxItems = document.querySelectorAll("[data-parallax]");
+if (!reduceMotion && parallaxItems.length) {
+  let ticking = false;
+  const updateParallax = () => {
+    const viewport = window.innerHeight;
+    parallaxItems.forEach((item) => {
+      const bounds = item.getBoundingClientRect();
+      const speed = Number(item.dataset.parallax) || 0.1;
+      const distance = (viewport / 2 - (bounds.top + bounds.height / 2)) * speed;
+      item.style.setProperty("--parallax-offset", `${distance.toFixed(1)}px`);
+    });
+    ticking = false;
+  };
+  const requestParallax = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateParallax);
+  };
+  window.addEventListener("scroll", requestParallax, { passive: true });
+  window.addEventListener("resize", requestParallax);
+  requestParallax();
+}
+
 const sections = document.querySelectorAll("main section[id]");
 const navLinks = document.querySelectorAll("#primary-nav a:not(.nav-cta)");
 if ("IntersectionObserver" in window && sections.length && navLinks.length) {
