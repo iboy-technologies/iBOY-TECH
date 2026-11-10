@@ -1,6 +1,6 @@
 # iBOY-TECH
 
-Responsive static landing page for iBOY-TECH, a software, electronics, and intelligent systems engineering studio.
+Responsive static landing page for iBOY-TECH, a software, electronics repair, and intelligent systems engineering studio.
 
 Open `index.html` directly or serve this dependency-free site with:
 
