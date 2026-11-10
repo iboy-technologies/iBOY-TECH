@@ -81,3 +81,20 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offse
 @supports not ((backdrop-filter:blur(1px))){.site-header .header-inner,.section-heading>div,.process-grid>div,.about-grid>div,.contact-inner>div,.service-panel,.media-ribbon,.resource-strip{background:rgba(255,255,255,.92)}.contact-inner>div{background:rgba(18,31,28,.92)}}
 @media(max-width:800px){.site-header{inset:10px 0 auto}.site-header .header-inner{padding:0 14px}.section-heading>div,.section-heading>.section-intro,.process-grid>div,.about-grid>div,.contact-inner>div{padding:22px;border-radius:20px}.media-ribbon,.resource-strip{padding:14px;border-radius:22px}.process-steps{padding:8px 20px}}
 @media(prefers-reduced-motion:reduce){.button,.nav-cta,.signal-disciplines span{transition:none}.button:hover,.nav-cta:hover{transform:none}}
+
+/* Neuromorphic surface system */
+:root{--neuro-base:#dce4e8;--neuro-deep:#c8d3d9;--neuro-highlight:rgba(255,255,255,.72);--neuro-shadow:rgba(126,145,155,.34);--neuro-ink:#172522}
+body{color:var(--neuro-ink);background-color:var(--neuro-base);background-image:radial-gradient(circle at 12% 16%,rgba(255,255,255,.5) 0 1px,transparent 1.5px),radial-gradient(circle at 76% 32%,rgba(108,133,145,.13) 0 1px,transparent 1.5px),radial-gradient(ellipse at 18% 0%,rgba(255,255,255,.62),transparent 42%),radial-gradient(ellipse at 88% 78%,rgba(169,216,229,.24),transparent 42%);background-size:22px 22px,31px 31px,100% 100%,100% 100%;background-attachment:fixed}
+.section{position:relative;background:linear-gradient(145deg,rgba(239,245,247,.58),rgba(205,216,222,.38));isolation:isolate}
+.section:before{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 12% 18%,rgba(255,255,255,.48),transparent 35%),radial-gradient(ellipse at 88% 82%,rgba(152,176,186,.14),transparent 38%);content:"";pointer-events:none}
+.signal-bar{box-shadow:0 12px 25px rgba(126,145,155,.32),0 -5px 12px rgba(255,255,255,.12)}
+.section-heading>div,.section-heading>.section-intro,.process-grid>div,.about-grid>div,.contact-inner>div,.media-ribbon,.resource-strip{border-color:rgba(255,255,255,.56);box-shadow:inset 2px 2px 5px var(--neuro-highlight),inset -5px -5px 12px rgba(126,145,155,.16),0 16px 34px rgba(126,145,155,.16)}
+.section-heading>div,.section-heading>.section-intro,.process-grid>div,.about-grid>div,.media-ribbon,.resource-strip{background:rgba(224,233,237,.5)}
+.process-section{background:linear-gradient(145deg,#e7eef1,#d4e0e5);box-shadow:inset 0 12px 30px rgba(126,145,155,.12),inset 0 -12px 30px rgba(255,255,255,.48)}
+.process-steps{box-shadow:inset 2px 2px 5px rgba(255,255,255,.7),inset -5px -5px 12px rgba(126,145,155,.2),0 14px 30px rgba(126,145,155,.13)}
+.service-panel{box-shadow:inset 3px 3px 8px rgba(255,255,255,.6),inset -7px -7px 15px rgba(126,145,155,.2),0 20px 38px rgba(126,145,155,.18)}
+.software{background:linear-gradient(145deg,rgba(220,242,237,.88),rgba(191,224,220,.62))}.electronics{background:linear-gradient(145deg,rgba(209,235,241,.88),rgba(174,209,220,.62))}.systems{background:linear-gradient(145deg,rgba(231,225,244,.88),rgba(204,193,226,.62))}
+.about-mark{border-color:rgba(255,255,255,.66);box-shadow:inset 3px 3px 7px rgba(255,255,255,.7),inset -6px -6px 12px rgba(126,145,155,.2),0 14px 30px rgba(126,145,155,.14)}
+.contact-section{box-shadow:inset 0 10px 24px rgba(0,0,0,.12),inset 0 -10px 24px rgba(255,255,255,.06)}
+@media(max-width:800px){body{background-attachment:scroll}.section{padding:90px 0}}
+@media(prefers-reduced-motion:reduce){body{background-attachment:scroll}}
